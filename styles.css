@@ -107,6 +107,7 @@ nav {
 
 /* MAIN */
 
+/* HERO */
 main > section:nth-child(1) {
   background-image: linear-gradient(
       rgba(16, 25, 34, 0.7),
@@ -186,4 +187,15 @@ form button {
   &:hover {
     cursor: pointer;
   }
+}
+
+/* CARDS SECTION */
+
+/* FOOTER */
+body > footer {
+  padding: 2rem 1rem;
+  margin: auto;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: center;
 }
