@@ -225,3 +225,64 @@ form > div select {
   border-radius: 0.5rem;
   cursor: pointer;
 }
+
+section > h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+main > section > div {
+  margin-top: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+
+  article {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  article:last-child {
+    border-bottom: none;
+  }
+}
+
+main > section > div > article {
+  h3 {
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: var(--text-primary);
+  }
+
+  h4 {
+    color: var(--primary-light);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-top: 0.25rem;
+  }
+
+  p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-top: 0.75rem;
+  }
+
+  button {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding-inline: 1.25rem;
+    padding-block: 0.5rem;
+    align-self: flex-start;
+    border-radius: 0.5rem;
+    background-color: var(--primary);
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+}
