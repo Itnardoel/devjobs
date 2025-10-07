@@ -110,7 +110,7 @@ header div:last-child {
   }
 }
 
-nav {
+header nav {
   display: flex;
   gap: 2rem;
 
