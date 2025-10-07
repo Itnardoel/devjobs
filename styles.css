@@ -8,10 +8,13 @@
   --background: #101922;
   --text-primary: #ffffff;
   --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
   --primary: #1173d4;
   --primary-dark: rgb(17 115 212 / 0.2);
   --primary-light: #334155;
   --border: rgb(255 255 255 / 0.1);
+  --form-background: #1e293b;
+  --input-placeholder: #62748e;
 }
 
 @font-face {
@@ -42,6 +45,7 @@ body > header {
   align-items: center;
   border-bottom: 1px solid var(--border);
   padding: 0 1rem;
+  background-color: var(--background);
 }
 
 header div:first-child {
@@ -98,5 +102,88 @@ nav {
     &:hover {
       color: var(--primary);
     }
+  }
+}
+
+/* MAIN */
+
+main > section:nth-child(1) {
+  background-image: linear-gradient(
+      rgba(16, 25, 34, 0.7),
+      rgba(16, 25, 34, 0.9)
+    ),
+    url('./background.webp');
+
+  padding: 10rem 0;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+
+  h1 {
+    font-size: 3.75rem;
+    line-height: 1;
+    font-weight: 900;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: var(--text-secondary);
+    max-width: 48rem;
+    margin: auto;
+    margin-bottom: 2rem;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    background-color: var(--form-background);
+    max-width: 42rem;
+    margin: auto;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+}
+
+form svg {
+  color: var(--text-muted);
+  margin: 0 0.5rem;
+  width: 32px;
+}
+
+form input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--text-primary);
+  font-family: inherit;
+
+  &::placeholder {
+    color: var(--input-placeholder);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+form button {
+  color: var(--text-primary);
+  background-color: var(--primary);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+
+  &:hover {
+    cursor: pointer;
   }
 }
