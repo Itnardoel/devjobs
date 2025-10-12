@@ -39,19 +39,34 @@ body {
 
 /* HEADER */
 
-body > header {
+.header {
+  border-bottom: 1px solid var(--border);
+  background-color: var(--background-primary);
+}
+
+.header--home {
   height: 5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 1px solid var(--border);
   padding: 0 1rem;
-  background-color: var(--background-primary);
 }
 
-header div:first-child {
+.header--search__content {
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  max-width: 80rem;
+  margin: auto;
+}
+
+.logo {
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: var(--text-primary);
   gap: 1rem;
 
   svg {
@@ -60,14 +75,50 @@ header div:first-child {
     color: var(--primary);
   }
 
-  h1 {
+  span {
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
 }
 
-header div:last-child {
+.logo__search {
+  gap: 0.5rem;
+}
+
+.header-search-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+
+  a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: color 150ms;
+
+    &:hover,
+    &:focus {
+      color: var(--primary);
+    }
+  }
+}
+
+.search-nav {
+  gap: 1.5rem;
+
+  a {
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+.header__actions {
   display: flex;
   gap: 1rem;
 
@@ -91,18 +142,30 @@ header div:last-child {
   }
 }
 
-nav {
-  display: flex;
-  gap: 2rem;
-
-  a {
+.header-search-right {
+  button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
     text-decoration: none;
-    color: var(--text-secondary);
-    transition: color 150ms;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    cursor: pointer;
+    border: none;
+  }
 
-    &:hover {
-      color: var(--primary);
-    }
+  button:first-child {
+    color: var(--primary);
+    background-color: var(--primary-dark);
+  }
+
+  button:last-child {
+    background-image: url('./image.png');
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
 

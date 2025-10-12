@@ -40,38 +40,24 @@ body {
 }
 
 /* HEADER */
-body > header {
+.header {
   border-bottom: 1px solid var(--border);
 }
 
-body > header > div {
+.header--search__content {
   height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 0 1rem;
-  background-color: var(--background-primary);
   max-width: 80rem;
   margin: auto;
 }
 
-header div div {
+.header-search-left {
   display: flex;
   align-items: center;
   gap: 2rem;
-
-  svg {
-    width: 2rem;
-    height: auto;
-    color: var(--primary);
-  }
-
-  h1 {
-    font-weight: 700;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
 }
 
 .logo {
@@ -80,9 +66,40 @@ header div div {
   text-decoration: none;
   color: var(--text-primary);
   gap: 0.5rem;
+
+  svg {
+    width: 2rem;
+    height: auto;
+    color: var(--primary);
+  }
+
+  span {
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
-header div:last-child {
+.search-nav {
+  display: flex;
+  gap: 1.5rem;
+
+  a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: var(--text-secondary);
+    transition: color 150ms;
+
+    &:hover,
+    &:focus {
+      color: var(--primary);
+    }
+  }
+}
+
+.header-search-right {
   display: flex;
   gap: 1rem;
 
@@ -102,31 +119,13 @@ header div:last-child {
     background-color: var(--primary-dark);
   }
 
-  button:nth-child(2) {
+  button:last-child {
     background-image: url('./image.png');
     background-position: center;
     background-size: cover;
     border-radius: 100%;
     width: 2.5rem;
     height: 2.5rem;
-  }
-}
-
-header nav {
-  display: flex;
-  gap: 1.5rem;
-
-  a {
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    color: var(--text-secondary);
-    transition: color 150ms;
-
-    &:hover {
-      color: var(--primary);
-    }
   }
 }
 
