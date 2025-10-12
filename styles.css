@@ -8,6 +8,7 @@
   --background-primary: #101922;
   --background-primary-10: rgba(0, 123, 255, 0.2);
   --background-secondary: #1e293b;
+  --background-button: #1f2937;
   --text-primary: #ffffff;
   --text-secondary: #cbd5e1;
   --text-muted: #94a3b8;
@@ -16,6 +17,7 @@
   --primary-light: #334155;
   --border: rgb(255 255 255 / 0.1);
   --input-placeholder: #62748e;
+  --select-background: rgb(55 65 81 / 0.5);
 }
 
 @font-face {
@@ -170,9 +172,33 @@ nav {
 }
 
 /* MAIN */
+.main--search {
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
+  padding-block: 3rem;
+
+  header {
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 3rem;
+      line-height: 1;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      margin-top: 1rem;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+  }
+}
 
 /* HERO */
-main > section:nth-child(1) {
+.hero {
   background-image: linear-gradient(
       rgba(16, 25, 34, 0.7),
       rgba(16, 25, 34, 0.9)
@@ -239,6 +265,60 @@ form input {
   }
 }
 
+.search--form {
+  display: flex;
+  flex-direction: column;
+  max-width: 80rem;
+  margin-bottom: 2rem;
+
+  div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background-color: var(--background-secondary);
+    padding-block: 0.5rem;
+    padding-inline: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+    &:focus-within {
+      border: 1px solid var(--primary);
+    }
+
+    svg {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+  }
+
+  input {
+    padding: 0;
+  }
+
+  div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+}
+
+.search-filters select {
+  background-color: var(--select-background);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
 form button {
   color: var(--text-primary);
   background-color: var(--primary);
@@ -254,7 +334,7 @@ form button {
   }
 }
 
-/* CARDS SECTION */
+/* HOME CARDS SECTION */
 main section:nth-child(2) {
   padding-block: 7rem;
   padding-inline: 1rem;
@@ -315,6 +395,69 @@ footer > article {
   }
 }
 
+/* SEARCH CARDS SECTION */
+
+.search-results > div {
+  margin-top: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+
+  article {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  article:last-child {
+    border-bottom: none;
+  }
+}
+
+.search-results > h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.search-results > div > article {
+  h3 {
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: var(--text-primary);
+  }
+
+  h4 {
+    color: var(--primary-light);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-top: 0.25rem;
+  }
+
+  p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-top: 0.75rem;
+  }
+
+  button {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding-inline: 1.25rem;
+    padding-block: 0.5rem;
+    align-self: flex-start;
+    border-radius: 0.5rem;
+    background-color: var(--primary);
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+}
+
 /* FOOTER */
 body > footer {
   padding: 2rem 1rem;
@@ -323,4 +466,36 @@ body > footer {
   display: flex;
   justify-content: center;
   border-top: 1px solid var(--border);
+}
+
+.search-results-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  gap: 0.5rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-decoration: none;
+    color: var(--text-secondary);
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+
+    &:hover {
+      background-color: var(--background-button);
+      color: var(--text-primary);
+    }
+  }
+
+  a:nth-of-type(2) {
+    background-color: var(--primary);
+  }
 }
