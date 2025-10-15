@@ -436,6 +436,10 @@ footer > article {
     a {
       text-decoration: none;
     }
+
+    &.is-hidden {
+      display: none;
+    }
   }
 
   article:last-child {
